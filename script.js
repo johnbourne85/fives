@@ -16,7 +16,11 @@ function searchfunction() {
   query = $("#searchbox").val();
   var searchURL = "https://api.airtable.com/v0/"+baseid+"/"+tablename+"?api_key="+apikey+"&filterByFormula=Find(LOWER(%22"+query+"%22)%2C+LOWER(title))";
    $.getJSON(searchURL, function(songData) {
-     console.log(songData);
+     if (songData.records.length === 0){
+              $("#output").append("Sorry, no results found."); 
+          $("#searchbtn").html("Search")
+        $("#searchbtn").attr("disabled", false);
+     } else {
       for (var i = 0; i < songData.records.length; i++) {
      var songitem = '<div class="card"><div class="song">'+songData.records[i].fields.title+'</div><div class="artist">by '+ songData.records[i].fields.artistRoll+'</div><div class="who">Chosen by '+ songData.records[i].fields.whoSongRoll+' in "'+songData.records[i].fields.themeRoll +'" week.</div>';
         console.log(songitem)
@@ -24,6 +28,7 @@ function searchfunction() {
           $("#searchbtn").html("Search")
         $("#searchbtn").attr("disabled", false);
       }
+     }
    });
   
 }
