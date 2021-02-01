@@ -16,7 +16,7 @@ function searchfunction() {
   var searchURL = "https://api.airtable.com/v0/"+baseid+"/"+tablename+"?api_key="+apikey+"&filterByFormula=Find(LOWER(%22"+query+"%22)%2C+LOWER(title))";
    $.getJSON(searchURL, function(songData) {
      if (songData.records.length === 0){
-              $("#output").append("Sorry, no results found."); 
+          $("#output").append('<div class="error">Sorry, no results found.</div>'); 
           $("#searchbtn").html("Search")
         $("#searchbtn").attr("disabled", false);
      } else {
