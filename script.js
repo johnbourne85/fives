@@ -6,7 +6,7 @@ var tablename = "songs";
 var query = "";
 var searchURL = "";
 
-function search() {
+function searchfunction() {
   console.log("hi");
   $("#output").html("");
   $("#searchbtn").html("Loading...")
