@@ -7,6 +7,7 @@ var query = "";
 var searchURL = "";
 
 function search() {
+  console.log("hi");
   $("#output").html("");
   $("#searchbtn").html("Loading...")
         $("#searchbtn").attr("disabled", true);
