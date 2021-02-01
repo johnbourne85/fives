@@ -1,15 +1,22 @@
+h1 {
+    font-family: 'Sora', sans-serif;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
 .card {
     margin: 10px;
     border: black solid 1px;
     padding: 5px;
     min-width: 200px;
-  }
-  
-  #output {
+}
+
+#output {
     display:flex;
     flex-wrap: wrap;
-  }
+}
 
-h1 {
-color:red;
+.song {
+    font-weight: bold;
 }
