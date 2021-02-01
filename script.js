@@ -1,4 +1,4 @@
-//$("#searchbtn").click(search);
+
 var apikey = "keyBktR0kgRoYnwGY";
 
 var baseid = "appoSpWy6YfbT6owy";
@@ -7,7 +7,7 @@ var query = "";
 var searchURL = "";
 
 function searchfunction() {
-  console.log("hi");
+  console.log("hi")
   $("#output").html("");
   $("#searchbtn").html("Loading...")
         $("#searchbtn").attr("disabled", true);
@@ -18,7 +18,7 @@ function searchfunction() {
    $.getJSON(searchURL, function(songData) {
      console.log(songData);
       for (var i = 0; i < songData.records.length; i++) {
-     var songitem = '<div class="card"><div class="song">'+songData.records[i].fields.title+'</div><div class="artist">by '+ songData.records[i].fields.artistRoll+'</div>';
+     var songitem = '<div class="card"><div class="song">'+songData.records[i].fields.title+'</div><div class="artist">by '+ songData.records[i].fields.artistRoll+'</div><div class="who">Chosen by '+ songData.records[i].fields.whoSongRoll+' in "'+songData.records[i].fields.themeRoll +'" week.</div>';
         console.log(songitem)
         $("#output").append(songitem); 
           $("#searchbtn").html("Search")
