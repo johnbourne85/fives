@@ -10,7 +10,7 @@ function searchfunction() {
   var tablename = "songs";
   var query = "";
   var searchURL = "";
-  var apikey = "keyBktR0kgRoYnwGY";
+  var apikey = "keyikCO7h5adp9Xtx";
 
   query = $("#searchbox").val();
   var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))&pageSize=10" + offset;
