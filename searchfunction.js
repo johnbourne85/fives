@@ -13,7 +13,7 @@ function searchfunction() {
   var apikey = "keyikCO7h5adp9Xtx";
 
   query = $("#searchbox").val();
-  var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))&pageSize=10" + offset;
+  var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))&pageSize=100" + offset;
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
       $("#output").append('<div class="error">Sorry, no results found.</div>');

@@ -57,3 +57,6 @@ background-color:#e4fdec;
 .error{
     margin-top:5px;
 }
+#pagination {
+  display:none;
+}
