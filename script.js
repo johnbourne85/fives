@@ -1,6 +1,6 @@
 
 var apikey = "keyBktR0kgRoYnwGY";
-var input = document.getElementById("searchbox").innerHTML;
+var input = document.getElementById("searchbox");
 console.log(input);
 var baseid = "appoSpWy6YfbT6owy";
 var tablename = "songs";
