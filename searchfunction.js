@@ -1,7 +1,9 @@
 function searchfunction() {
   $("#output").html("");
-  $("#searchbtn").html("Loading...");
+  $("#searchbtn").html("...");
   $("#searchbtn").attr("disabled", true);
+  $("#searchbtn").attr("background-color", #f2f2f2);
+  $("#searchbtn").attr("color", black);
   $("#pagination").html("");
   var offset = ""
   var baseid = "appoSpWy6YfbT6owy";
