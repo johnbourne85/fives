@@ -17,8 +17,10 @@ function searchfunction() {
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
       $("#output").append('<div class="error">Sorry, no results found.</div>');
-      $("#searchbtn").html("Search");
+      $("#searchbtn").html("Go");
       $("#searchbtn").attr("disabled", false);
+      $("#searchbtn").css("color","white");
+      $("#searchbtn").css("background-color","#0099cc");
     } else {
         if (songData.records.length >= 9) {
 var offset = "&offset=" + songData.offset;
@@ -37,6 +39,8 @@ $("#pagination").append(nextLink);
           + '" week.</div>';
 
         $("#output").append(songitem);
+
+
         $("#searchbtn").html("Go");
         $("#searchbtn").attr("disabled", false);
         $("#searchbtn").css("color","white");
