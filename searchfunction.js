@@ -2,6 +2,8 @@ function searchfunction() {
   $("#output").html("");
   $("#searchbtn").html("...");
   $("#searchbtn").attr("disabled", true);
+  $("#searchbtn").css("color","black");
+  $("#searchbtn").css("background-color","#f2f2f2");
   $("#pagination").html("");
   var offset = ""
   var baseid = "appoSpWy6YfbT6owy";
@@ -35,9 +37,11 @@ $("#pagination").append(nextLink);
           + '" week.</div>';
 
         $("#output").append(songitem);
-        $("#searchbtn").html("Search");
+        $("#searchbtn").html("Go");
         $("#searchbtn").attr("disabled", false);
-        
+        $("#searchbtn").css("color","white");
+        $("#searchbtn").css("background-color","#0099cc");
+
       }
       
     }
