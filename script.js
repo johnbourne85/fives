@@ -1,11 +1,5 @@
-
-var apikey = "keyBktR0kgRoYnwGY";
 var input = document.getElementById("searchbox");
-car offset = ""
-var baseid = "appoSpWy6YfbT6owy";
-var tablename = "songs";
-var query = "";
-var searchURL = "";
+
 
 window.onload = function() {
   

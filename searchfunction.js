@@ -2,7 +2,12 @@ function searchfunction() {
   $("#output").html("");
   $("#searchbtn").html("Loading...");
   $("#searchbtn").attr("disabled", true);
-
+  var offset = ""
+  var baseid = "appoSpWy6YfbT6owy";
+  var tablename = "songs";
+  var query = "";
+  var searchURL = "";
+  var apikey = "keyBktR0kgRoYnwGY";
 
   query = $("#searchbox").val();
   var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))&pageSize=10" + offset;
