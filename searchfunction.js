@@ -2,6 +2,7 @@ function searchfunction() {
   $("#output").html("");
   $("#searchbtn").html("Loading...");
   $("#searchbtn").attr("disabled", true);
+  $("#pagination").html("");
   var offset = ""
   var baseid = "appoSpWy6YfbT6owy";
   var tablename = "songs";
@@ -19,6 +20,9 @@ function searchfunction() {
     } else {
         if (songData.records.length >= 9) {
 var offset = "&offset=" + songData.offset;
+var offsetURL = searchURL + offset
+var nextLink = "<a href='"+offsetURL+"'>Next ></a>";
+$("#pagination").append(nextLink);
         }
 
       for (var i = 0; i < songData.records.length; i++) {
@@ -33,8 +37,9 @@ var offset = "&offset=" + songData.offset;
         $("#output").append(songitem);
         $("#searchbtn").html("Search");
         $("#searchbtn").attr("disabled", false);
-        $("#pagination").append(offset);
+        
       }
+      
     }
   });
 
