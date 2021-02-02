@@ -16,9 +16,11 @@ function searchfunction() {
       $("#output").append('<div class="error">Sorry, no results found.</div>');
       $("#searchbtn").html("Search");
       $("#searchbtn").attr("disabled", false);
-    } else if (songData.records.length >= 9) {
-var offset = "&offset=" + songData.offset;
     } else {
+        if (songData.records.length >= 9) {
+var offset = "&offset=" + songData.offset;
+        }
+
       for (var i = 0; i < songData.records.length; i++) {
         var songitem = '<div class="card"><div class="song">'
           + songData.records[i].fields.title
@@ -31,7 +33,6 @@ var offset = "&offset=" + songData.offset;
         $("#output").append(songitem);
         $("#searchbtn").html("Search");
         $("#searchbtn").attr("disabled", false);
-
         $("#pagination").append(offset);
       }
     }
