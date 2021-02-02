@@ -1,6 +1,6 @@
 
 var apikey = "keyBktR0kgRoYnwGY";
-var input = document.getElementById("searchbox");
+
 console.log(input);
 var baseid = "appoSpWy6YfbT6owy";
 var tablename = "songs";
@@ -39,8 +39,12 @@ function searchfunction() {
    });
   
 }
+window.onload = function() {
+  var input = document.getElementById("searchbox");
+ }
 // Execute a function when the user releases a key on the keyboard
 input.addEventListener("keyup", function(event) {
+  console.log("enter");
   // Cancel the default action, if needed
   event.preventDefault();
   // Number 13 is the "Enter" key on the keyboard
