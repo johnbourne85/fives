@@ -5,12 +5,14 @@ function searchfunction() {
 
 
   query = $("#searchbox").val();
-  var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))";
+  var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(title))&pageSize=10" + offset;
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
       $("#output").append('<div class="error">Sorry, no results found.</div>');
       $("#searchbtn").html("Search");
       $("#searchbtn").attr("disabled", false);
+    } else if (songData.records.length >= 9) {
+var offset = "&offset=" + songData.offset;
     } else {
       for (var i = 0; i < songData.records.length; i++) {
         var songitem = '<div class="card"><div class="song">'
@@ -24,6 +26,8 @@ function searchfunction() {
         $("#output").append(songitem);
         $("#searchbtn").html("Search");
         $("#searchbtn").attr("disabled", false);
+
+        $("#pagination").append(offset);
       }
     }
   });
