@@ -11,6 +11,7 @@ function searchfunction() {
   var query = "";
   var searchURL = "";
   var apikey = "keyikCO7h5adp9Xtx";
+  var hadThat = "<p>WE'VE HAD THAT ALREADY! Or... at least we've had something kinda simlar based on the letters you've typed in...</p>"
 
   query = $("#searchbox").val();
   var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(searchroll))&pageSize=100" + offset;
@@ -28,6 +29,7 @@ var offsetURL = searchURL + offset
 var nextLink = "<a href='"+offsetURL+"'>Next ></a>";
 $("#pagination").append(nextLink);
         }
+      $("#output").append(hadThat);
 
       for (var i = 0; i < songData.records.length; i++) {
         var songitem = '<div class="card"><div class="song">'
