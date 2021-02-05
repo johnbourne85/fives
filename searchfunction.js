@@ -16,7 +16,7 @@ function searchfunction() {
   var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(searchroll))&pageSize=100" + offset;
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
-      $("#output").append('<div class="error">Sorry, no results found.</div>');
+      $("#output").append("<div class='error'><p>There was a young man called Peter</p><p>When it comes to cock, he's an eater</p><p>No results for this search</p><p>But don't cry, Mr Church</p><p>You are a song choosing world beater.</p></div>");
       $("#searchbtn").html("Go");
       $("#searchbtn").attr("disabled", false);
       $("#searchbtn").css("color","white");
