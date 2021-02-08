@@ -11,7 +11,7 @@ function searchfunction() {
   var query = "";
   var searchURL = "";
   var apikey = "keyikCO7h5adp9Xtx";
-  var hadThat = "<p>WE'VE HAD THAT ALREADY! Or... at least we've had something kinda simlar based on the letters you've typed in...</p>"
+  var hadThat = "<p>WE'VE HAD THAT ALREADY! Or... at least we've had something kinda similar based on the letters you've typed in...</p>"
 
   query = $("#searchbox").val();
   var searchURL = "https://api.airtable.com/v0/" + baseid + "/" + tablename + "?api_key=" + apikey + "&filterByFormula=Find(LOWER(%22" + query + "%22)%2C+LOWER(searchroll))&pageSize=100" + offset;
