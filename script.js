@@ -1,21 +1,13 @@
-var input = document.getElementById("searchbox");
+const inputBox = document.querySelector("#searchbox");
+console.log(inputBox);
 
-
-window.onload = function() {
-  
-  input = document.getElementById("searchbox");
-  console.log(input);
-  // Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  console.log("enter");
+// Execute a function when the user releases a key on the keyboard
+inputBox.addEventListener("keyup", function (event) {
   // Cancel the default action, if needed
   event.preventDefault();
   // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
+  if (event.key === "Enter") {
     // Trigger the button element with a click
-    console.log("enter");
     document.getElementById("searchbtn").click();
   }
 });
-}
-
