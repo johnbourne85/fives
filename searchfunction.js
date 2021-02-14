@@ -29,7 +29,7 @@ function searchfunction() {
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
       $("#output").append(
-        "<div class='error'><p>There was a young man called Peter</p><p>When it comes to cock, he's an eater</p><p>No results for this search</p><p>But don't cry, Mr Church</p><p>You are a song choosing world beater.</p></div>"
+        "<div class='error'><p>There was a young man called Peter,</p><p>When it comes to cock, he's an eater,</p><p>No results for this search,</p><p>But don't cry, Mr Church,</p><p>You are a song choosing world beater.</p></div>"
       );
       $("#searchbtn").html("Go");
       $("#searchbtn").attr("disabled", false);
