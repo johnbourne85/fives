@@ -5,11 +5,12 @@ function searchfunction() {
 
   const baseid = "appoSpWy6YfbT6owy";
   const tablename = "songs";
-  const query = document.querySelector("#searchbox").textContent;
+  const query = document.getElementById("searchbox").value;
   const apikey = "keyikCO7h5adp9Xtx";
   const hadThat = `<div class="alert alert-warning" role="alert"><p><strong>We've had that already!</strong></p></p>Or... at least we've had something kinda similar based on the letters you've typed in...</p></div>`;
   document.querySelector("#message").textContent = "";
   const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${apikey}&filterByFormula=Find(LOWER(%22${query}%22)%2C+LOWER(searchroll))`;
+  console.log(searchURL);
   let oddEven = "";
 
   $.getJSON(searchURL, function (songData) {
