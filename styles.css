@@ -1,64 +1,6 @@
-h1 {
-  font-family: "Sora", sans-serif;
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-.card {
-  margin: 10px;
-  border: black solid 1px;
-  padding: 5px;
-  min-width: 200px;
-}
-
-.card:nth-of-type(odd) {
-  background-color: #e4fbfd;
-}
-
-.card:nth-of-type(even) {
-  background-color: #e4fdec;
-}
-
-#output {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  display: flex;
-  width: 100%;
-}
-.input-container {
-  width: 90%;
-}
-#searchbtn {
-  width: 10%;
-  background-color: #0099cc;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-}
-#searchbox {
-  width: 100%;
-  height: 30px;
-  font-size: 25px;
-}
-
-.song {
-  font-weight: bold;
-}
-.who {
-  font-style: italic;
-  margin-top: 5px;
-  color: #606060;
-}
-
-.error {
-  margin-top: 5px;
-}
-#pagination {
-  display: none;
-}
 .hidden {
   display: none;
+}
+body {
+  margin: 5px;
 }

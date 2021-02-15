@@ -13,7 +13,7 @@ function searchfunction() {
   var apikey = "keyikCO7h5adp9Xtx";
   var hadThat =
     "<p>WE'VE HAD THAT ALREADY! Or... at least we've had something kinda similar based on the letters you've typed in...</p>";
-
+  document.querySelector("#message").textContent = "";
   query = $("#searchbox").val();
   var searchURL =
     "https://api.airtable.com/v0/" +
@@ -29,7 +29,7 @@ function searchfunction() {
 
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
-      $("#output").append(
+      $("#message").append(
         "<div class='error'><p>There was a young man called Peter,</p><p>When it comes to cock, he's an eater,</p><p>No results for this search,</p><p>But don't cry, Mr Church,</p><p>You are a song choosing world beater.</p></div>"
       );
       $("#searchbtn").html("Go");
@@ -37,23 +37,24 @@ function searchfunction() {
       $("#searchbtn").css("color", "white");
       $("#searchbtn").css("background-color", "#0099cc");
     } else {
-      $("#output").append(hadThat);
+      $("#message").append(hadThat);
 
       for (var i = 0; i < songData.records.length; i++) {
         let who = songData.records[i].fields.whoSongRoll;
         if (who === undefined) {
           who = "someone";
         }
-        var songitem =
-          '<div class="card"><div class="song">' +
-          songData.records[i].fields.title +
-          '</div><div class="artist">by ' +
-          songData.records[i].fields.artistRoll +
-          '</div><div class="who">Chosen by ' +
-          who +
-          ' in "' +
-          songData.records[i].fields.themeRoll +
-          '" week.</div>';
+
+        var songitem = `
+        <div class="col" >
+        <div class="card text-dark bg-light mb-3" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">${songData.records[i].fields.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">by ${songData.records[i].fields.artistRoll}</h6>
+            <p class="card-text">Chosen by <strong>${who}</strong> in the "<em><strong>${songData.records[i].fields.themeRoll}</strong></em>" theme.</p>
+          </div>
+        </div>
+        </div>`;
 
         $("#output").append(songitem);
 
