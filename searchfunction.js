@@ -26,6 +26,7 @@ function searchfunction() {
     query +
     "%22)%2C+LOWER(searchroll))&pageSize=100" +
     offset;
+
   $.getJSON(searchURL, function (songData) {
     if (songData.records.length === 0) {
       $("#output").append(
@@ -42,7 +43,6 @@ function searchfunction() {
         let who = songData.records[i].fields.whoSongRoll;
         if (who === undefined) {
           who = "someone";
-          console.log(who);
         }
         var songitem =
           '<div class="card"><div class="song">' +
