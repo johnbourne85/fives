@@ -8,6 +8,6 @@ inputBox.addEventListener("keyup", function (event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.key === "Enter") {
     // Trigger the button element with a click
-    document.getElementById("searchbtn").click();
+    document.getElementById("searchBtn").click();
   }
 });
