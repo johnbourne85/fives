@@ -61,10 +61,21 @@
       </div>
     </nav>
     <h1>Theme details</h1>
-
-    <div class="cardContainer" id="output">
-      <span id="loading">Loading...</span>
-    </div>
+    <select
+      class="form-select"
+      id="whoSelect"
+      aria-label="Default select example"
+    >
+      <option selected>All</option>
+      <option value="1">Chid</option>
+      <option value="2">Dave</option>
+      <option value="3">John</option>
+      <option value="4">Luke</option>
+      <option value="5">Pete</option>
+      <option value="6">Rocky</option>
+    </select>
+    <div id="loading">Loading...</div>
+    <div class="cardContainer" id="output"></div>
 
     <script src="themes.js"></script>
   </body>
