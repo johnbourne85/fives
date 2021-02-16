@@ -1,13 +1,13 @@
+//set up the URL to get data
 const baseid = "appoSpWy6YfbT6owy";
 const tablename = "artist";
-
 const apikey = "keyikCO7h5adp9Xtx";
-
 const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${apikey}&sort%5B0%5D%5Bfield%5D=countSongs&sort%5B0%5D%5Bdirection%5D=desc`;
+
 let songList = "";
 $.getJSON(searchURL, function (songData) {
-  for (var i = 0; i < songData.records.length; i++) {
-    var artistItem = ` <div class="accordion-item">
+  for (let i = 0; i < songData.records.length; i++) {
+    let artistItem = ` <div class="accordion-item">
   <h2 class="accordion-header" id="heading${i + 1}">
     <button
       class="accordion-button collapsed"
