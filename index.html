@@ -28,18 +28,43 @@
   </head>
 
   <body>
-    <h1 class="heading">Five club search</h1>
-
-    <p><a href="/artists.html">Top artists</a></p>
-    <p class="lead">Search for a song title, artist, club member or theme.</p>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Five club</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Search</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/artists.html">Top artists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/themes.html">Themes</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1>Search for something</h1>
     <div class="input-group mb-3">
       <input
         type="text"
         id="searchbox"
         class="form-control"
-        placeholder="Search"
-        aria-label="Search for a song title, artist, club member or theme"
+        placeholder="song title, artist, club member or theme"
+        aria-label="Search"
         aria-describedby="searchBtn"
       />
       <button
