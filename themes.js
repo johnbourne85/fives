@@ -61,10 +61,10 @@ document
         chosen = "John";
         break;
       case "4":
-        chosen = "Pete";
+        chosen = "Luke";
         break;
       case "5":
-        chosen = "Luke";
+        chosen = "Pete";
         break;
       case "6":
         chosen = "Rocky";
