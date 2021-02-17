@@ -64,7 +64,7 @@ document
         chosen = "Pete";
         break;
       case "5":
-        chosen = "Pete";
+        chosen = "Luke";
         break;
       case "6":
         chosen = "Rocky";
