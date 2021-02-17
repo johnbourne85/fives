@@ -6,10 +6,13 @@ const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${
 document.querySelector("#loading").classList.remove("hidden");
 let songList = "";
 
+//Filter by person, or "all"
 function filterByPerson(chosenPerson) {
+  //clear content
   document.querySelector("#loading").classList.remove("hidden");
   document.querySelector("#output").innerHTML = "";
 
+  //get the data
   $.getJSON(searchURL, function (songData) {
     for (let i = 0; i < songData.records.length; i++) {
       if (chosenPerson == "All") {
@@ -22,6 +25,8 @@ function filterByPerson(chosenPerson) {
       </div>
     </div>
     `;
+
+        //if person seletcted isn't the person in this part of the loop, skip it
       } else if (songData.records[i].fields.whothemeName != chosenPerson) {
         continue;
       }
@@ -39,9 +44,8 @@ function filterByPerson(chosenPerson) {
       document.querySelector("#loading").classList.add("hidden");
     }
   });
-
-  //return "hello";
 }
+//Listen for change on select box
 
 document
   .getElementById("whoSelect")
@@ -75,19 +79,5 @@ document
     filterByPerson(chosen);
   });
 
-$.getJSON(searchURL, function (songData) {
-  for (let i = 0; i < songData.records.length; i++) {
-    let output = `
-    <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">  ${songData.records[i].fields.theme}</h5>
-    <p class="card-text">by ${songData.records[i].fields.whothemeName}</p>
-    <a href="${songData.records[i].fields.spotifyUrl}" class="btn btn-primary">Listen on Spotify</a>
-  </div>
-</div>
-`;
-
-    $("#output").append(output);
-    document.querySelector("#loading").classList.add("hidden");
-  }
-});
+// run the filter
+filterByPerson("All");
