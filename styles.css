@@ -20,3 +20,37 @@ select,
 nav {
   margin-bottom: 20px;
 }
+
+.listItems {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin-bottom: 5px;
+  border-bottom: black 1px dashed;
+  padding: 5px 0px 5px 0px;
+}
+.rounded-pill {
+  max-height: 22.5px;
+}
+.artistTitle {
+  margin-right: 10px;
+}
+
+.artistPill {
+  margin-right: 10px;
+}
+
+ol {
+  padding: 0px;
+}
+.artistPageArtistTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.totalArtistsChosenByUs {
+  margin-right: 10px;
+}

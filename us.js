@@ -13,7 +13,7 @@ $.getJSON(searchURL, function (songData) {
     let artistArray = songData.records[i].fields.artistRoll.split(";;;");
 
     let topArtists = ` <div class="accordion-item">
-    <h2 class="accordion-header" id="heading${i + 1}">
+    <div class="accordion-header" id="heading${i + 1}">
     <button
       class="accordion-button collapsed"
       type="button"
@@ -21,9 +21,12 @@ $.getJSON(searchURL, function (songData) {
       data-bs-target="#collapse${i + 1}"
       aria-expanded="true"
       aria-controls="collapse${i + 1}"
-    >
-    ${songData.records[i].fields.Name} </button>
-  </h2>
+    ><div class="totalArtistsChosenByUs">
+    <h3>${
+      songData.records[i].fields.Name
+    }</h3><p class="text-muted">Chosen a total of <strong><span id="totalArtists${i}"></span></strong> artists</p> </button>
+  </div>
+  </div>
   <div
     id="collapse${i + 1}"
     class="accordion-collapse collapse"
@@ -52,14 +55,18 @@ $.getJSON(searchURL, function (songData) {
       return a[1] - b[1];
     });
     sortable.reverse();
-    console.log(songData.records[i].fields.Name + " " + sortable);
+
+    let totalChosen = sortable.length;
+    $(`#totalArtists${i}`).append(totalChosen);
     for (let j = 0; j < 10; j++) {
       let artistAndTotal = sortable[j];
       let artistTitle = artistAndTotal[0];
       let totalPicked = artistAndTotal[1];
 
-      songList = `<li>
-      <strong>${artistTitle}</strong>: Chosen ${totalPicked} times.
+      songList = `<li class="listItems">
+      <span class="artistTitle"><strong>${
+        j + 1
+      }: ${artistTitle}</strong></span><span class="chosenAmount badge bg-primary rounded-pill"> ${totalPicked}</span>
           </li>`;
       $(`#us${i}`).append(songList);
     }

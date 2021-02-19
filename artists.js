@@ -16,10 +16,12 @@ $.getJSON(searchURL, function (songData) {
       data-bs-target="#collapse${i + 1}"
       aria-expanded="true"
       aria-controls="collapse${i + 1}"
-    >
-    <span><strong>${i + 1}</strong></span>: ${
+    ><div class="artistPageArtistTitle">
+    <h3><strong>${i + 1}</strong>: ${
       songData.records[i].fields.Name
-    } (Chosen ${songData.records[i].fields.countSongs} times).
+    }</h3><span class="badge bg-primary rounded-pill artistPill">${
+      songData.records[i].fields.countSongs
+    }</span></div>
     </button>
   </h2>
   <div
@@ -46,7 +48,7 @@ $.getJSON(searchURL, function (songData) {
     }
     for (let j = 0; j < songsArray.length; j++) {
       songList = `<li>
-      <strong>${songsArray[j]}</strong>, chosen by ${whoArray[j]} in the ${themeArray[j]} theme
+      <h5>${songsArray[j]}</h5><p>Chosen by <strong>${whoArray[j]}</strong> in the <strong>${themeArray[j]}</strong> theme</p>
           </li>`;
       $(`#artist${i}`).append(songList);
     }
