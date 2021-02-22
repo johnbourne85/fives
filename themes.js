@@ -5,6 +5,7 @@ const apikey = "keyikCO7h5adp9Xtx";
 const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${apikey}`;
 console.log(searchURL);
 document.querySelector("#loading").classList.remove("hidden");
+
 let songList = "";
 
 //Filter by person, or "all"
@@ -28,9 +29,7 @@ function filterByPerson(chosenPerson) {
           aria-controls="collapse${i + 1}"
         ><div class="totalArtistsChosenByUs">
         <h3>${songData.records[i].fields.theme}</h3>
-        <a href="${
-          songData.records[i].fields.spotifyUrl
-        }" class="text-muted" id="totalArtists${i}">Listen on Spotify</a>
+        
       
       </div>
       </div>
@@ -41,6 +40,9 @@ function filterByPerson(chosenPerson) {
         data-bs-parent="#output"
       >
         <div class="accordion-body">
+        <a href="${
+          songData.records[i].fields.spotifyUrl
+        }" class="btn btn-secondary spotifyBtn" id="totalArtists${i}"><i class="fab fa-spotify spotifyIcon"></i>Listen on Spotify </a>
           <ol id="songList${i}">
           </ol>
         </div>
@@ -88,7 +90,7 @@ function filterByPerson(chosenPerson) {
         <div class="accordion-body">
         <a href="${
           songData.records[i].fields.spotifyUrl
-        }" class="btn btn-secondary" id="totalArtists${i}">Listen on Spotify</a>
+        }" class="btn btn-secondary spotifyBtn" id="totalArtists${i}"><i class="fab fa-spotify spotifyIcon"></i>Listen on Spotify</a>
           <ol id="songList${i}">
           </ol>
         </div>
@@ -108,6 +110,7 @@ function filterByPerson(chosenPerson) {
         }
       }
     }
+    document.querySelector("#whoSelect").classList.remove("hidden");
   });
 }
 //Listen for change on select box
@@ -115,6 +118,7 @@ function filterByPerson(chosenPerson) {
 document
   .getElementById("whoSelect")
   .addEventListener("change", function getPerson() {
+    document.querySelector("#whoSelect").classList.add("hidden");
     let chosen = this.value;
     switch (chosen) {
       case "0":
