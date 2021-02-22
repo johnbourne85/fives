@@ -75,9 +75,7 @@ function filterByPerson(chosenPerson) {
           aria-controls="collapse${i + 1}"
         ><div class="totalArtistsChosenByUs">
         <h3>${songData.records[i].fields.theme}</h3>
-        <a href="${
-          songData.records[i].fields.spotifyUrl
-        }" class="text-muted" id="totalArtists${i}">Listen on Spotify</a>
+       
       
       </div>
       </div>
@@ -88,6 +86,9 @@ function filterByPerson(chosenPerson) {
         data-bs-parent="#output"
       >
         <div class="accordion-body">
+        <a href="${
+          songData.records[i].fields.spotifyUrl
+        }" class="btn btn-secondary" id="totalArtists${i}">Listen on Spotify</a>
           <ol id="songList${i}">
           </ol>
         </div>
