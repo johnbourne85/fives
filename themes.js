@@ -7,18 +7,6 @@ console.log(searchURL);
 document.querySelector("#loading").classList.remove("hidden");
 let songList = "";
 
-const songsInTheme = function (songs, artists) {
-  const songsArr = songs.split(";;;");
-  const artistsArr = artists.split(";;;");
-  const songsAndArtist = [];
-
-  for (let i = 0; i < songsArr.length; i++) {
-    songsAndArtist.push([songsArr[i], artistsArr[i]]);
-  }
-
-  return songsAndArtist;
-};
-
 //Filter by person, or "all"
 function filterByPerson(chosenPerson) {
   //clear content
@@ -108,8 +96,15 @@ function filterByPerson(chosenPerson) {
 
         $("#output").append(themeInfo);
         document.querySelector("#loading").classList.add("hidden");
+        const songsArr = songData.records[i].fields.songsRoll.split(";;;");
+        const artistsArr = songData.records[i].fields.artistsRoll.split(";;;");
 
-        songsInTheme();
+        for (let j = 0; j < songsArr.length; j++) {
+          let songList = `<li>
+          <strong>${songsArr[j]}</strong> by ${artistsArr[j]}
+              </li>`;
+          $(`#songList${i}`).append(songList);
+        }
       }
     }
   });
