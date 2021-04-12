@@ -7,7 +7,7 @@ const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${
 let songList = "";
 $.getJSON(searchURL, function (songData) {
   for (let i = 0; i < songData.records.length; i++) {
-    let artistItem = ` <div class="accordion-item">
+    let artistItem = `<div class="accordion-item">
   <h2 class="accordion-header" id="heading${i + 1}">
     <button
       class="accordion-button collapsed"

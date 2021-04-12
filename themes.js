@@ -66,7 +66,7 @@ function filterByPerson(chosenPerson) {
       } else if (songData.records[i].fields.whothemeName != chosenPerson) {
         continue;
       } else if (chosenPerson != "All") {
-        let themeInfo = ` <div class="accordion-item">
+        let themeInfo = `<div class="accordion-item">
         <div class="accordion-header" id="heading${i + 1}">
         <button
           class="accordion-button collapsed"
