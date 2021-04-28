@@ -12,7 +12,8 @@ function searchfunction() {
   //set up the URL for getting the data
   const baseid = "appoSpWy6YfbT6owy";
   const tablename = "songs";
-  const query = document.getElementById("searchbox").value;
+  const query = document.getElementById("searchbox").value.trim();
+  console.log(query);
   const apikey = "keyikCO7h5adp9Xtx";
   const searchURL = `https://api.airtable.com/v0/${baseid}/${tablename}?api_key=${apikey}&filterByFormula=Find(LOWER(%22${query}%22)%2C+LOWER(searchroll))`;
 

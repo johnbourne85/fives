@@ -1,5 +1,4 @@
 const inputBox = document.querySelector("#searchbox");
-console.log(inputBox);
 
 // Execute a function when the user releases a key on the keyboard when in the inputbox
 inputBox.addEventListener("keyup", function (event) {
