@@ -41,6 +41,11 @@ nav {
   margin-right: 10px;
 }
 
+.chosenByNumber {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
 ol {
   padding: 0px;
 }

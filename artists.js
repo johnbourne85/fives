@@ -21,9 +21,14 @@ $.getJSON(searchURL, function (songData) {
       songData.records[i].fields.Name
     }</h3><span class="badge bg-primary rounded-pill artistPill">${
       songData.records[i].fields.countSongs
-    }</span></div>
-    </button>
-  </h2>
+    }</span>
+    </div>
+    
+    </button> </h2>
+    <p class="chosenByNumber" id="chosenBy${i}"></p>
+ 
+
+  
   <div
     id="collapse${i + 1}"
     class="accordion-collapse collapse"
@@ -31,6 +36,7 @@ $.getJSON(searchURL, function (songData) {
     data-bs-parent="#output"
   >
     <div class="accordion-body">
+    
       <ol id="artist${i}">
       </ol>
     </div>
@@ -40,6 +46,9 @@ $.getJSON(searchURL, function (songData) {
     $("#output").append(artistItem);
     let songsArray = songData.records[i].fields.songRoll.split(";;;");
     let whoArray = songData.records[i].fields.whoRoll.split(";;;");
+    let chosenBy = [...new Set(whoArray)];
+    $(`#chosenBy${i}`).append("Chosen by ", chosenBy.length, " Armadillos");
+    console.log(chosenBy);
     let themeArray = songData.records[i].fields.themeRoll.split(";;;");
     for (let k = 0; k < whoArray.length; k++) {
       if (whoArray[k] === "") {
